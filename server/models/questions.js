@@ -16,10 +16,6 @@ const questScheme = new Schema(
       type: String,
       required: true
     },
-    category: {
-      type: Schema.Types.ObjectId,
-      ref: 'Category'
-    },
     vote: {
       type: Number,
       default: 0, 

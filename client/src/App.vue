@@ -16,8 +16,8 @@
             <div class='right item'>
               <entry-modals class='item' :isLogin='isLogin' :me='me'/>
             </div>
-            <a class="ui chat-btn" @click="toggleChat"><i class="icon chat red"></i></a>
-            <chat-modal v-show="chat" style="position: fixed; z-index: 10000; right:3%; bottom: 10%;"></chat-modal>
+            <a v-if="isLogin" class="ui chat-btn" @click="toggleChat"><i class="icon chat red"></i></a>
+            <chat-modal v-if="isLogin" v-show="chat" style="position: fixed; z-index: 10000; right:3%; bottom: 10%;"></chat-modal>
           </div>
         </div>
       </div>

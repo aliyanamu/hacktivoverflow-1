@@ -11,6 +11,10 @@ router.get('/', function(req, res, next) {
 router
   .post('/:id', isLogin, addAns)
 
-  .patch('/:id', editAns)
+  .put('/:id', isLogin, editAns)
+
+  .put('/upvote/:id', isLogin, upvoteAns)
+
+  .put('/downvote/:id', isLogin, downvoteAns)
 
 module.exports = router

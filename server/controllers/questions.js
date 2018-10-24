@@ -10,7 +10,6 @@ module.exports = {
     Question.create({
       title: req.body.title,
       question: req.body.question,
-      category: req.body.category,
       author: req.user.id
     })
       .then(() => {
@@ -78,7 +77,6 @@ module.exports = {
           }, {
               title: req.body.title,
               question: req.body.question,
-              category: req.body.category
             })
             .then(update => {
               res.status(201).json({

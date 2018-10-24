@@ -15,8 +15,12 @@ router
 
   .post('/', isLogin, addQuest)
 
-  .patch('/:id', updQuest)
+  .put('/:id', isLogin, updQuest)
 
-  .delete('/:id', delQuest)
+  .put('/upvote/:id', isLogin, upvoteQuest)
+
+  .put('/downvote/:id', isLogin, downvoteQuest)
+
+  .delete('/:id', isLogin, delQuest)
 
 module.exports = router

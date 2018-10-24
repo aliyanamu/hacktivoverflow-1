@@ -16,10 +16,21 @@ export default new Router({
     {
       path: '/forum',
       name: 'forum',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () => import('./views/Forum.vue'),
+      children: [
+        {
+          path: '/forum/questions/:id',
+          name: 'details',
+          component: () => import('./components/QuestionDetail.vue'),
+          props: true
+        },
+        {
+          path: '/forum/questions/edit/:id',
+          name: 'edit',
+          component: () => import('./components/QuestionForm.vue'),
+          props: true
+        }
+      ]
     }
   ]
 })
