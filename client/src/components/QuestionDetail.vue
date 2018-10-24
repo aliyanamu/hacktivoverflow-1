@@ -63,7 +63,7 @@ export default {
       upq: '',
       upa: '',
       editModal: false,
-      baseurl: 'http://localhost:3000'
+      baseurl: 'https://redoverflow-server.hanabc.xyz'
     }
   },
   methods: {
@@ -75,7 +75,7 @@ export default {
     ]),
     toogleEdit (qid, aid) {
       this.editModal = !this.editModal
-      if(this.editModal) {
+      if (this.editModal) {
         this.upq = qid
         this.upa = aid
       }
@@ -103,7 +103,7 @@ export default {
     upvoteAns (id) {
       axios({
         method: 'PUT',
-        url:  this.baseurl + `/answers/upvote/${id}`,
+        url: this.baseurl + `/answers/upvote/${id}`,
         headers: {
           token: localStorage.getItem('token')
         }
@@ -118,7 +118,7 @@ export default {
     downvoteAns (id) {
       axios({
         method: 'PUT',
-        url:  this.baseurl + `/answers/downvote/${id}`,
+        url: this.baseurl + `/answers/downvote/${id}`,
         headers: {
           token: localStorage.getItem('token')
         }
@@ -166,12 +166,7 @@ export default {
       'question',
       'voteCount'
     ])
-  },
-  // watch: {
-  //   voteAnsCount () {
-  //     this.$router.push(`/forum`)
-  //   }
-  // }
+  }
 }
 </script>
 

@@ -26,7 +26,7 @@ export default {
     return {
       answer: '',
       quest: '',
-      baseurl: 'http://localhost:3000'
+      baseurl: 'https://redoverflow-server.hanabc.xyz'
     }
   },
   methods: {
@@ -65,16 +65,16 @@ export default {
         })
     }
   },
-   computed: {
+  computed: {
     ...mapState([
       'questions',
       'question'
     ])
   },
-  mounted() {
+  mounted () {
     this.getAnswer()
   },
-  created() {
+  created () {
     this.getQuestionById(this.upq)
   }
 }

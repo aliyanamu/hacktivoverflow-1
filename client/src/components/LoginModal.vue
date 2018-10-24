@@ -47,7 +47,7 @@ export default {
       password: '',
       email: '',
       notif: '',
-      baseurl: 'http://localhost:3000'
+      baseurl: 'https://redoverflow-server.hanabc.xyz'
     }
   },
   methods: {
@@ -60,12 +60,12 @@ export default {
       this.$emit('switch2reg', true)
       this.logtoggle()
     },
-		logtoggle () {
-			this.logshow = !this.logshow
+    logtoggle () {
+      this.logshow = !this.logshow
     },
     login () {
       let self = this
-      axios ({
+      axios({
         method: 'POST',
         url: this.baseurl + '/users/login',
         data: {
@@ -73,27 +73,27 @@ export default {
           password: self.password
         }
       })
-      .then(response => {
-        console.log('login', response)
-        let token = response.data.token
-        localStorage.setItem('token', token)
-        location.reload()
-      })
-      .catch(error => {
-        console.log(error.response)
-        if( !self.email) {
-          self.notif = 'email is required'
-        } else if (!self.password) {
-          self.notif = 'password is required'
-        } else {
-          self.notif = error.response.data.message
-        }
-      })
+        .then(response => {
+          console.log('login', response)
+          let token = response.data.token
+          localStorage.setItem('token', token)
+          location.reload()
+        })
+        .catch(error => {
+          console.log(error.response)
+          if (!self.email) {
+            self.notif = 'email is required'
+          } else if (!self.password) {
+            self.notif = 'password is required'
+          } else {
+            self.notif = error.response.data.message
+          }
+        })
     }
   },
   watch: {
     switch2log (val) {
-      if(val === true) {
+      if (val === true) {
         this.logshow = true
       } else {
         this.logshow = false

@@ -30,7 +30,7 @@ export default {
       title: '',
       desc: '',
       id: this.$route.params.id,
-      baseurl: 'http://localhost:3000'
+      baseurl: 'https://redoverflow-server.hanabc.xyz'
     }
   },
   methods: {
@@ -49,7 +49,7 @@ export default {
         },
         data: {
           title: self.title,
-          question: self.desc,
+          question: self.desc
         }
       })
         .then(response => {
@@ -80,7 +80,7 @@ export default {
         })
     }
   },
-   computed: {
+  computed: {
     ...mapState([
       'questions',
       'question'

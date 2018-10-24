@@ -39,7 +39,7 @@ export default {
       user: '',
       message: '',
       messages: [],
-      socket: io('https://quill-server.hanabc.xyz')
+      socket: io('https://redoverflow-server.hanabc.xyz')
     }
   },
   methods: {

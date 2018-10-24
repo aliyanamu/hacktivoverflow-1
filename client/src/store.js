@@ -28,7 +28,7 @@ export default new Vuex.Store({
   actions: {
     getQuestionById (context, id) {
       axios
-        .get(`http://localhost:3000/questions/${id}`)
+        .get(`https://redoverflow-server.hanabc.xyz/questions/${id}`)
         .then(response => {
           context.commit('setQuestionById', response.data.question)
         })
@@ -38,7 +38,7 @@ export default new Vuex.Store({
     },
     getAllQuestion (context, input) {
       axios
-        .get('http://localhost:3000/questions')
+        .get('https://redoverflow-server.hanabc.xyz/questions')
         .then(response => {
           response.data.questions.sort(function (a, b) {
             let keyA = a.vote
@@ -68,7 +68,7 @@ export default new Vuex.Store({
     upvoteQuest (context, id) {
       axios({
         method: 'PUT',
-        url: `http://localhost:3000/questions/upvote/${id}`,
+        url: `https://redoverflow-server.hanabc.xyz/questions/upvote/${id}`,
         headers: {
           token: localStorage.getItem('token')
         }
@@ -85,7 +85,7 @@ export default new Vuex.Store({
     downvoteQuest (context, id) {
       axios({
         method: 'PUT',
-        url: `http://localhost:3000/questions/downvote/${id}`,
+        url: `https://redoverflow-server.hanabc.xyz/questions/downvote/${id}`,
         headers: {
           token: localStorage.getItem('token')
         }
