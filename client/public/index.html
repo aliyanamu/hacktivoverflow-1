@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Courgette&amp;subset=latin-ext" rel="stylesheet">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="760645321620-fjpuaf8lmlv81mqn5a1efhdlvarilh0g.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="204128595539-ajr3u95hd4b2gcqqjtt8b78ja9jsqioq.apps.googleusercontent.com">
     <link rel="icon" href="<%= BASE_URL %>kiss.png">
     <title>RedOverflow</title>
   </head>
@@ -33,7 +33,7 @@
         
         $.ajax({
           method: "POST",
-          url: `http://localhost:3000/users/google-signin`,
+          url: `https://redoverflow-server.hanabc.xyz/users/google-signin`,
           data: {
             googleToken: id_token
           }

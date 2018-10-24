@@ -93,7 +93,8 @@ export default {
       })
         .then(response => {
           console.log('success add answer')
-          this.$router.push('/')
+          this.$store.dispatch('getAllQuestion')
+          this.$store.dispatch('getQuestionById', this.$route.params.id)
         })
         .catch(err => {
           console.log('get error', err.message)
@@ -304,6 +305,7 @@ a, a:hover, a:visited {
   z-index: 10000;
   top: 10%;
   left: 5%;
+  width: 32%;
 }
 .overlay {
   position: fixed;

@@ -7,7 +7,7 @@
         <i class="inverted circular search link icon"></i>
       </div></li>
       <li v-if="isLogin"><div class="ui labeled red icon button" @click="toogleCreate">
-        Create New Article
+        Create New Question
       <i class="add icon"></i></div>
       <div v-if="addModal"><div class="overlay"></div>
       <question-form class="openform" :addModal="addModal" @addModal="toogleCreate"></question-form></div>
@@ -189,6 +189,7 @@ a {
   position: fixed;
   z-index: 10000;
   top: 10%;
+  width: 32%;
 }
 .overlay {
   position: fixed;

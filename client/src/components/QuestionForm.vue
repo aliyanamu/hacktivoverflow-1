@@ -54,6 +54,8 @@ export default {
       })
         .then(response => {
           this.$router.push('/forum')
+          this.$store.dispatch('getAllQuestion')
+          this.$emit('addModal')
         })
         .catch(error => {
           console.log(error.response)
