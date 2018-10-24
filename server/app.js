@@ -79,7 +79,8 @@ User.find()
     Question.aggregate([{
       $project: {
         day: {
-          $month: "$createdAt"
+          $month: "$createdAt",
+          $year: "$createdAt"
         },
         author: user.id
       }
